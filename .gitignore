@@ -4,3 +4,7 @@ BlazorClient/BlazorClient/bin/
 
 BlazorServer/BlazorServer/obj/
 BlazorServer/BlazorServer/bin/
+
+BlazorServer/.vs/BlazorServer/v16/
+
+BlazorClient/.vs/BlazorClient/v16/
