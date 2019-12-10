@@ -1,0 +1,22 @@
+﻿@page "/depo"
+
+<Malzemeler MalzemeList="malzemeList"></Malzemeler>
+
+<br />
+
+<h2>Raflar</h2>
+
+@code{
+    List<Malzeme> malzemeList;
+
+
+    protected override void OnInitialized()
+    {
+        malzemeList = new List<Malzeme>()
+    {
+            new Malzeme(){Ismi="Masa",Uzunlugu=80},
+            new Malzeme(){Ismi="sandalye",Uzunlugu=100},
+            new Malzeme(){Ismi="Vazor",Uzunlugu=30}
+        };
+    }
+}

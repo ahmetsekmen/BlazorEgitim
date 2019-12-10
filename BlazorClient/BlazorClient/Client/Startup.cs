@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Components.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace BlazorClient
+namespace BlazorClient.Client
 {
     public class Startup
     {

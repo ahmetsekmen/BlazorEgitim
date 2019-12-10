@@ -1,0 +1,17 @@
+﻿<h3>Malzemeler</h3>
+
+<div>
+    @foreach (var item in MalzemeList)
+    {
+        <Mal mal="item"></Mal>
+    }
+</div>
+
+
+@code{
+    [Parameter]
+    public List<Malzeme> MalzemeList { get; set; }
+
+
+    
+}

@@ -1,0 +1,19 @@
+﻿@page "/"
+
+
+<Malzemeler MalzemeList="malzemeList"></Malzemeler>
+
+@code{
+    List<Malzeme> malzemeList;
+
+
+    protected override void OnInitialized()
+    {
+        malzemeList = new List<Malzeme>()
+    {
+            new Malzeme(){Ismi="Çiçek",Uzunlugu=234},
+            new Malzeme(){Ismi="Yatak",Uzunlugu=234},
+            new Malzeme(){Ismi="Yastık",Uzunlugu=4536}
+        };
+    }
+}

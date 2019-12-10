@@ -1,6 +1,12 @@
 
-BlazorClient/BlazorClient/obj/
-BlazorClient/BlazorClient/bin/
+BlazorClient/BlazorClient/Client/obj/
+BlazorClient/BlazorClient/Client/bin/
+
+BlazorClient/BlazorClient/Server/obj/
+BlazorClient/BlazorClient/Server/bin/
+
+BlazorClient/BlazorClient/Shared/obj/
+BlazorClient/BlazorClient/Shared/bin/
 
 BlazorServer/BlazorServer/obj/
 BlazorServer/BlazorServer/bin/
