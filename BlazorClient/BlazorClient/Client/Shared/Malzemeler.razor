@@ -1,6 +1,8 @@
 ﻿<h3>Malzemeler</h3>
 
-<input type="checkbox" @onchange="@(()=>gorunur = !gorunur)"/>
+@*<input type="checkbox" @onchange="@(()=>gorunur = !gorunur)"/>*@
+
+<input type="checkbox" @bind="gorunur" />
 
 <div>
     @foreach (var item in MalzemeList)
