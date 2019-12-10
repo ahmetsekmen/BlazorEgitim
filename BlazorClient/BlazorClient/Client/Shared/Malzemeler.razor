@@ -1,9 +1,11 @@
 ﻿<h3>Malzemeler</h3>
 
+<input type="checkbox" @onchange="@(()=>gorunur = !gorunur)"/>
+
 <div>
     @foreach (var item in MalzemeList)
     {
-        <Mal mal="item"></Mal>
+        <Mal mal="item" SilGorunur="gorunur"></Mal>
     }
 </div>
 
@@ -12,6 +14,6 @@
     [Parameter]
     public List<Malzeme> MalzemeList { get; set; }
 
+    bool gorunur = false;
 
-    
 }
