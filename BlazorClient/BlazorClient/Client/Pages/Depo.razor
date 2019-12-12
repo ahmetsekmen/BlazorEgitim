@@ -1,4 +1,6 @@
 ﻿@page "/depo"
+@inject BlazorClient.Client.Helper.InMemory inMemory
+
 
 <Malzemeler MalzemeList="malzemeList"></Malzemeler>
 
@@ -12,11 +14,8 @@
 
     protected override void OnInitialized()
     {
-        malzemeList = new List<Malzeme>()
-    {
-            new Malzeme(){Ismi="Masa",Uzunlugu=80},
-            new Malzeme(){Ismi="sandalye",Uzunlugu=100},
-            new Malzeme(){Ismi="Vazor",Uzunlugu=30}
-        };
+        malzemeList = inMemory.GetMalzemeList();
+
+
     }
 }
