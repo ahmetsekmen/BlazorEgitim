@@ -1,0 +1,16 @@
+﻿@typeparam TItem
+
+<div>
+    @foreach (var item in TItemList)
+    {
+        @TItemTemplate(item)
+    }
+</div>
+
+@code{
+    [Parameter]
+    public List<TItem> TItemList { get; set; }
+
+    [Parameter]
+    public RenderFragment<TItem> TItemTemplate { get; set; }
+}

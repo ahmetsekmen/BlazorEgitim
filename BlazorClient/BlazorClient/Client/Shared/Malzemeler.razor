@@ -1,27 +1,19 @@
 ﻿<h3>Malzemeler</h3>
 
-@*<input type="checkbox" @onchange="@(()=>gorunur = !gorunur)"/>*@
-
 <input type="checkbox" @bind="gorunur" />
 
-<div>
-    @foreach (var item in MalzemeList)
-    {
+<GenericList TItemList="MalzemeList">
+    <TItemTemplate Context="item">
         <Mal mal="item" SilGorunur="gorunur" MalSil="MalSil"></Mal>
-    }
-</div>
+    </TItemTemplate>
+</GenericList>
 
-<hr />
-
-@ChildContent
 
 
 @code{
     [Parameter]
     public List<Malzeme> MalzemeList { get; set; }
 
-    [Parameter]
-    public RenderFragment ChildContent { get; set; }
 
 
     bool gorunur = false;
