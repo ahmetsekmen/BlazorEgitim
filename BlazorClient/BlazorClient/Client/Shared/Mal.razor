@@ -3,7 +3,7 @@
 @if (SilGorunur)
 {
     <div>
-        <button @onclick="Sil" class="btn btn-danger">Sil</button>
+        <button @onclick="@(()=>MalSil.InvokeAsync(mal))" class="btn btn-danger">Sil</button>
     </div>
 }
 
@@ -14,8 +14,7 @@
     [Parameter]
     public bool SilGorunur { get; set; }
 
-    void Sil()
-    {
-        Console.WriteLine($"{mal.Ismi} isimli mmal siliniyor.");
-    }
+    [Parameter]
+    public EventCallback<Malzeme> MalSil { get; set; }
+
 }

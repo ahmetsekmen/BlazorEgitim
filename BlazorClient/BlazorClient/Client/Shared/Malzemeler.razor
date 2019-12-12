@@ -7,7 +7,7 @@
 <div>
     @foreach (var item in MalzemeList)
     {
-        <Mal mal="item" SilGorunur="gorunur"></Mal>
+        <Mal mal="item" SilGorunur="gorunur" MalSil="MalSil"></Mal>
     }
 </div>
 
@@ -17,5 +17,10 @@
     public List<Malzeme> MalzemeList { get; set; }
 
     bool gorunur = false;
+
+    private void MalSil(Malzeme mal)
+    {
+        MalzemeList.Remove(mal);
+    }
 
 }
