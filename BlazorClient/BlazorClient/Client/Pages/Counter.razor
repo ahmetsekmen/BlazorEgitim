@@ -13,4 +13,30 @@
     {
         currentCount++;
     }
+
+
+    protected override void OnInitialized()
+    {
+        Console.WriteLine("OnInitialized "  + currentCount.ToString());
+    }
+
+    protected override void OnParametersSet()
+    {
+        Console.WriteLine("OnParametersSet " + currentCount.ToString());
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        Console.WriteLine("OnAfterRender " + currentCount.ToString());
+        Console.WriteLine("OnAfterRender firstRender=" + firstRender.ToString());
+    }
+
+    protected override bool ShouldRender()
+    {
+        if (currentCount<=5)
+        {
+            return true;
+        }
+        return false;
+    }
 }
