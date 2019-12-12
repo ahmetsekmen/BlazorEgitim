@@ -1,5 +1,5 @@
 ﻿@page "/depo"
-@inject BlazorClient.Client.Helper.InMemory inMemory
+
 
 
 <Malzemeler MalzemeList="malzemeList"></Malzemeler>
@@ -7,15 +7,3 @@
 <br />
 
 <h2>Raflar</h2>
-
-@code{
-    List<Malzeme> malzemeList;
-
-
-    protected override void OnInitialized()
-    {
-        malzemeList = inMemory.GetMalzemeList();
-
-
-    }
-}
