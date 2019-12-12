@@ -11,10 +11,18 @@
     }
 </div>
 
+<hr />
+
+@ChildContent
+
 
 @code{
     [Parameter]
     public List<Malzeme> MalzemeList { get; set; }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
 
     bool gorunur = false;
 
