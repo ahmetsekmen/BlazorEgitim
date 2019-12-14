@@ -1,19 +1,36 @@
 ﻿@page "/"
+@inject IJSRuntime JSRuntime
 
+<button class="btn btn-success" @onclick="RunJSAlert">RunJSAlert</button>
 
-<Malzemeler MalzemeList="malzemeList"></Malzemeler>
+<button class="btn btn-success" @onclick="AlVer">AlVer</button>
+<input type="text" @bind="result"/>
+
 
 @code{
-    List<Malzeme> malzemeList;
+    async Task RunJSAlert()
+    {
+        await JSRuntime.InvokeVoidAsync("myAlert");
+    }
 
+    string result;
+
+    async Task AlVer()
+    {
+        result = await JSRuntime.AlVer("Ahmet", "Sekmen");
+    }
 
     protected override void OnInitialized()
     {
-        malzemeList = new List<Malzeme>()
+        JSRuntime.
+        }
+
+    protected override void OnAfterRender(bool firstRender)
     {
-            new Malzeme(){Ismi="Çiçek",Uzunlugu=234},
-            new Malzeme(){Ismi="Yatak",Uzunlugu=234},
-            new Malzeme(){Ismi="Yastık",Uzunlugu=4536}
-        };
+        if (firstRender)
+        {
+            JSRuntime.
+        }
     }
+
 }
