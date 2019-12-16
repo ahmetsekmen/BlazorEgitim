@@ -2,8 +2,20 @@
 
 
 
-<Malzemeler MalzemeList="malzemeList"></Malzemeler>
+<Malzemeler MalzemeList="malzemeList" @ref="malzemeler"></Malzemeler>
 
 <br />
 
-<h2>Raflar</h2>
+<button class="btn btn-success" @onclick="(()=>malzemeler.Isimler())"></button>
+
+@code{
+    Malzemeler malzemeler;
+
+    public void Isimler()
+    {
+        foreach (var item in malzemeler.Isimler())
+        {
+            Console.WriteLine(item);
+        }
+    }
+}

@@ -23,4 +23,9 @@
         MalzemeList.Remove(mal);
     }
 
+
+    public IEnumerable<string> Isimler()
+    {
+        return MalzemeList.Select(x => x.Ismi);
+    }
 }
