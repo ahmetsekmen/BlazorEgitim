@@ -1,17 +1,30 @@
 ﻿@page "/counter"
 
+
 <h1>Counter</h1>
 
 <p>Current count: @currentCount</p>
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
+<div>
+    <p style="font-size:@AppState.Boyut;">Cascading Value : @AppState.Sayi</p>
+</div>
+
 @code {
+
+    [CascadingParameter]
+    public AppState AppState { get; set; }
+
+
+
     private int currentCount = 0;
 
     private void IncrementCount()
     {
         currentCount++;
+        AppState.Sayi = currentCount;
+        AppState.Boyut = currentCount + "px";
     }
 
 
@@ -31,12 +44,12 @@
         Console.WriteLine("OnAfterRender firstRender=" + firstRender.ToString());
     }
 
-    protected override bool ShouldRender()
-    {
-        if (currentCount<=5)
-        {
-            return true;
-        }
-        return false;
-    }
+    //protected override bool ShouldRender()
+    //{
+    //    if (currentCount<=5)
+    //    {
+    //        return true;
+    //    }
+    //    return false;
+    //}
 }

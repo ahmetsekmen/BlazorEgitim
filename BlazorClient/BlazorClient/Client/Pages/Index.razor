@@ -11,7 +11,14 @@
     Sounc : <span id="randomrakam"></span>
 </div>
 
+
+<p>@AppState.Sayi</p>
+
 @code{
+    [CascadingParameter]
+    public AppState AppState { get; set; }
+
+
     async Task RunJSAlert()
     {
         await JSRuntime.InvokeVoidAsync("myAlert");
