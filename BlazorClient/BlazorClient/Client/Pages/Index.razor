@@ -6,6 +6,10 @@
 <button class="btn btn-success" @onclick="AlVer">AlVer</button>
 <input type="text" @bind="result"/>
 
+<button class="btn btn-info" onclick="randomRakamVer(100)">Random Rakam</button>
+<div>
+    Sounc : <span id="randomrakam"></span>
+</div>
 
 @code{
     async Task RunJSAlert()
@@ -21,4 +25,9 @@
     }
 
 
+    [JSInvokable]
+    public static Task<int> RandomSayiUret(int limit)
+    {
+        return Task.FromResult(new Random().Next(limit));
+    }
 }
