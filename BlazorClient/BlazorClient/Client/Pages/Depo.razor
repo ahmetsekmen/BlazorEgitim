@@ -2,7 +2,7 @@
 
 @page "/depo1"
 @page "/depo2"
-
+@inject NavigationManager navigationManager
 
 
 <Malzemeler MalzemeList="malzemeList" @ref="malzemeler"></Malzemeler>
@@ -10,6 +10,8 @@
 <br />
 
 <button class="btn btn-success" @onclick="(()=>malzemeler.Isimler())"></button>
+
+<button class="btn btn-danger" @onclick="RouteCounter">Countera Git</button>
 
 @code{
     Malzemeler malzemeler;
@@ -20,5 +22,11 @@
         {
             Console.WriteLine(item);
         }
+    }
+
+    public void RouteCounter()
+    {
+        Console.WriteLine(navigationManager.Uri);
+        navigationManager.NavigateTo("counter");
     }
 }
