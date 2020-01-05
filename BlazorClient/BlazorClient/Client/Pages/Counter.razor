@@ -1,4 +1,6 @@
 ﻿@page "/counter"
+@page "/counter/{sayi:int}"
+@page "/counter/{sayi:int}/{isim}"
 
 
 <h1>Counter</h1>
@@ -11,8 +13,21 @@
     <p style="font-size:@AppState.Boyut;">Cascading Value : @AppState.Sayi</p>
 </div>
 
+<div>
+    <p>@sayi</p>
+    <p>@isim</p>
+
+</div>
+
+
 
 @code {
+    [Parameter]
+    public int sayi { get; set; }
+
+    [Parameter]
+    public string isim { get; set; }
+
 
     [CascadingParameter]
     public AppState AppState { get; set; }

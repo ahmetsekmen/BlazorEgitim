@@ -5,6 +5,7 @@
 @inject NavigationManager navigationManager
 
 
+
 <Malzemeler MalzemeList="malzemeList" @ref="malzemeler"></Malzemeler>
 
 <br />
@@ -12,6 +13,10 @@
 <button class="btn btn-success" @onclick="(()=>malzemeler.Isimler())"></button>
 
 <button class="btn btn-danger" @onclick="RouteCounter">Countera Git</button>
+
+<div class="form-group">
+    <a class="btn btn-info" href="/arac/create">Araç Oluştur.</a>
+</div>
 
 @code{
     Malzemeler malzemeler;
