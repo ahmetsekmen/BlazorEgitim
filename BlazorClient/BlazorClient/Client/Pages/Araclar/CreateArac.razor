@@ -1,0 +1,22 @@
+﻿@page "/arac/create"
+
+<h3> Arac Oluştur</h3>
+
+<EditForm Model="arac" OnSubmit="Create">
+    <div class="form-group">
+        <label> Araç MÖarkası:</label>
+        <div>
+            <InputText class="form-control" @bind-Value="@arac.Marka"></InputText>
+        </div>
+    </div>
+    <button class=" btn btn-success" type="submit"> Kaytdet</button>
+</EditForm>
+
+@code{
+    private Arac arac=new Arac();
+
+    private void Create()
+    {
+        Console.WriteLine(arac.Marka);
+    }
+}
