@@ -1,0 +1,16 @@
+﻿<EditForm Model="Arac" OnValidSubmit="OnValidSubmit">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <div class="form-group">
+        <label> Araç Markası:</label>
+        <div>
+            <InputText class="form-control" @bind-Value="@Arac.Marka"></InputText>
+            <ValidationMessage For="@(()=>Arac.Marka)"></ValidationMessage>
+        </div>
+    </div>
+    <button class=" btn btn-success" type="submit"> Kaytdet</button>
+</EditForm>
+
+@code{
+    [Parameter]public Arac Arac { get; set; }
+    [Parameter]public EventCallback OnValidSubmit { get; set; }
+}
