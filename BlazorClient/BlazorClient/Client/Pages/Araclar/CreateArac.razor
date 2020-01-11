@@ -3,10 +3,12 @@
 <h3> Arac Oluştur</h3>
 
 <EditForm Model="arac" OnSubmit="Create">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
     <div class="form-group">
         <label> Araç Markası:</label>
         <div>
             <InputText class="form-control" @bind-Value="@arac.Marka"></InputText>
+            <ValidationMessage For="@(()=>arac.Marka)"></ValidationMessage>
         </div>
     </div>
     <button class=" btn btn-success" type="submit"> Kaytdet</button>
