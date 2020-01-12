@@ -8,6 +8,12 @@
         </div>
     </div>
 
+    <div class="form-group">
+        <InputMarkDown Label="Yorum"
+                       @bind-Value="Arac.Yorum"
+                       For="@(()=>Arac.Yorum)"></InputMarkDown>
+    </div>
+
 
     <button class=" btn btn-success" type="submit"> Kaytdet</button>
 

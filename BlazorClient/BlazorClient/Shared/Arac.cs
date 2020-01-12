@@ -12,5 +12,8 @@ namespace BlazorClient.Shared
         public Guid Id { get; set; }
         [Required (ErrorMessage = "Marka bilgisi girmek zorundasınız.")]
         public String Marka { get; set; }
+
+        [StringLength(50,ErrorMessage ="50 DEN UZUN OLAMAZ")]
+        public string Yorum { get; set; }
     }
 }
