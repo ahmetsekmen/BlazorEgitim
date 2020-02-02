@@ -1,6 +1,18 @@
 ﻿@page "/"
 @inject IJSRuntime JSRuntime
 
+<AuthorizeView Roles="Manager">
+    <Authorized>
+        Yetkiniz Var, @context.User.Identity.Name
+    </Authorized>
+    <NotAuthorized>
+        Yetkiniz yok
+    </NotAuthorized>
+</AuthorizeView>
+
+<br />
+<hr />
+
 <button class="btn btn-success" @onclick="RunJSAlert">RunJSAlert</button>
 
 <button class="btn btn-success" @onclick="AlVer">AlVer</button>
