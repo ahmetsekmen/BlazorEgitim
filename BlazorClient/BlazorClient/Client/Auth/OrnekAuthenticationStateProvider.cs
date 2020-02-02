@@ -16,9 +16,9 @@ namespace BlazorClient.Client.Auth
             var anonim = new System.Security.Claims.ClaimsIdentity(new List<Claim>() 
             { 
                 new Claim("Key","Value"),
-                new Claim(ClaimTypes.Name,"Ahmet")
-                //new Claim(ClaimTypes.Role,"Manager")
-            });
+                new Claim(ClaimTypes.Name,"Ahmet"),
+                new Claim(ClaimTypes.Role,"Manager")
+            },"test");
             return await Task.FromResult(new AuthenticationState(new System.Security.Claims.ClaimsPrincipal(anonim)));
         }
     }

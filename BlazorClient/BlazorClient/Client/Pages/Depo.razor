@@ -1,9 +1,8 @@
 ﻿@page "/depo"
 
-@page "/depo1"
-@page "/depo2"
 @inject NavigationManager navigationManager
-
+@attribute [Authorize(Roles = "Manager")]
+@using Microsoft.AspNetCore.Authorization
 
 
 <Malzemeler MalzemeList="malzemeList" @ref="malzemeler"></Malzemeler>
